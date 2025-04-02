@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('header/header.css');
+
+
+@import url('components/header/header.css');
+@import url('components/banner/banner.css');
+@import url('components/categories/categories.css');
+
+:root{
+  --bg-primary: #FFF3E3;
+}
 
 
 body {
@@ -8,9 +16,3 @@ body {
   overflow-x: hidden;
 }
 
-.homeImage {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  filter: brightness(0.8);
-}

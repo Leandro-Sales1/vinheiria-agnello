@@ -1,11 +1,11 @@
-<section class="headerContainer">
+<header class="headerContainer">
   <div class="logoDiv">
     <img class="headerImage" src="./assets/images/logo.png" />
     <h1 class="headertTitle">Vinheria Agnello</h1>
   </div>
   <div class="logoDiv">
     <a class="headerLink" href="#">Produtos</a>
-    <a class="headerLink" href="#">Sobre Nï¿½s</a>
+    <a class="headerLink" href="#">Sobre Nós</a>
   </div>
   <div class="logoDiv">
     <a class="headerLink" href="#">
@@ -23,4 +23,4 @@
       </svg>
     </a>
   </div>
-</section>
+</header>

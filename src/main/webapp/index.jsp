@@ -1,4 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
   <!DOCTYPE html>
   <html>
 
@@ -12,8 +14,14 @@
   </head>
 
   <body>
-    <jsp:include page="./header/header.jsp"></jsp:include>
-    <img class="homeImage" src="./assets/images/homeImage.jpg" />
+    <jsp:include page="components/header/header.jsp"></jsp:include>
+    <main>
+      <jsp:include page="components/banner/banner.jsp"></jsp:include>
+      <jsp:include page="components/categories/categories.jsp"></jsp:include>
+
+
+    </main>
+
 
 
 
