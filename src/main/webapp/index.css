@@ -4,6 +4,7 @@
 @import url('components/header/header.css');
 @import url('components/banner/banner.css');
 @import url('components/categories/categories.css');
+@import url('components/carrousel/carrousel.css');
 
 :root{
   --bg-primary: #FFF3E3;

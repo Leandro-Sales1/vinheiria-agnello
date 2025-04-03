@@ -10,7 +10,7 @@
 
 .cardImage{
 	width: 31rem;
-	height: 24rem;
+	height: 34rem;
 	object-fit: cover;
 	border-radius: 16px;
 }
@@ -31,6 +31,8 @@
 	align-items: center;
 	gap: 2rem;
 	cursor: pointer;
+	width: auto;
+	height: auto;
 }
 
 .categoryDiv:hover{

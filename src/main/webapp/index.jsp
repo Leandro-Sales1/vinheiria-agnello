@@ -18,6 +18,7 @@
     <main>
       <jsp:include page="components/banner/banner.jsp"></jsp:include>
       <jsp:include page="components/categories/categories.jsp"></jsp:include>
+      <jsp:include page="components/carrousel/carrousel.jsp"></jsp:include>
 
 
     </main>
