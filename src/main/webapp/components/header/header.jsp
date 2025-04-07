@@ -1,10 +1,12 @@
 <header class="headerContainer">
   <div class="logoDiv">
+  	<a href="/vinheiria-agnello">
     <img class="headerImage" src="./assets/images/logo.png" />
+  	</a>
     <h1 class="headertTitle">Vinheria Agnello</h1>
   </div>
   <div class="logoDiv">
-    <a class="headerLink" href="#">Produtos</a>
+    <a class="headerLink" href="/vinheiria-agnello/products">Produtos</a>
     <a class="headerLink" href="#">Sobre Nós</a>
   </div>
   <div class="logoDiv">
