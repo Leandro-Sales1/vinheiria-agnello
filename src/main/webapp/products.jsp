@@ -24,38 +24,59 @@
         <div class="productsContainer">
           <div class="productsDiv">
             <c:forEach var="product" items="${products}">
-              <div class="productDiv">
-                <img src="${product.image}" alt="${product.title} image">
-                <div class="productInfoDiv">
-                  <h2>${product.title}</h2>
-                  <p>${product.tag}</p>
-                  <h2>R$ ${product.price}</h2>
+              <form action="products" method="post">
+                <div class="productDiv">
+                  <img src="${product.image}" alt="${product.title} image">
+                  <div class="productInfoDiv">  
+                    <h2>${product.title}</h2>
+                      <p>${product.tag}</p>
+                    <h2>R$ ${product.price}</h2>
+                  </div>
+                  <input type="hidden" name="title" value="${product.title}" />
+        		  <input type="hidden" name="image" value="${product.image}" />
+        		  <input type="hidden" name="tag" value="${product.tag}" />
+                  <input type="hidden" name="price" value="${product.price}" />
+                  <button type="submit">Add to Cart</button>
                 </div>
-              </div>
+              </form>
             </c:forEach>
           </div>
           <div class="productsDiv">
             <c:forEach var="product" items="${products}">
-              <div class="productDiv">
-                <img src="${product.image}" alt="${product.title} image">
-                <div class="productInfoDiv">
-                  <h2>${product.title}</h2>
-                  <p>${product.tag}</p>
-                  <h2>R$ ${product.price}</h2>
+              <form action="products" method="post">
+                <div class="productDiv">
+                  <img src="${product.image}" alt="${product.title} image">
+                  <div class="productInfoDiv">  
+                    <h2>${product.title}</h2>
+                      <p>${product.tag}</p>
+                    <h2>R$ ${product.price}</h2>
+                  </div>
+                  <input type="hidden" name="title" value="${product.title}" />
+        		  <input type="hidden" name="image" value="${product.image}" />
+        		  <input type="hidden" name="tag" value="${product.tag}" />
+                  <input type="hidden" name="price" value="${product.price}" />
+                  <button type="submit">Add to Cart</button>
                 </div>
-              </div>
+              </form>
             </c:forEach>
           </div>
-          <div class="productsDiv">
+		  <div class="productsDiv">
             <c:forEach var="product" items="${products}">
-              <div class="productDiv">
-                <img src="${product.image}" alt="${product.title} image">
-                <div class="productInfoDiv">
-                  <h2>${product.title}</h2>
-                  <p>${product.tag}</p>
-                  <h2>R$ ${product.price}</h2>
+              <form action="products" method="post">
+                <div class="productDiv">
+                  <img src="${product.image}" alt="${product.title} image">
+                  <div class="productInfoDiv">  
+                    <h2>${product.title}</h2>
+                      <p>${product.tag}</p>
+                    <h2>R$ ${product.price}</h2>
+                  </div>
+                  <input type="hidden" name="title" value="${product.title}" />
+        		  <input type="hidden" name="image" value="${product.image}" />
+        		  <input type="hidden" name="tag" value="${product.tag}" />
+                  <input type="hidden" name="price" value="${product.price}" />
+                  <button type="submit">Add to Cart</button>
                 </div>
-              </div>
+              </form>
             </c:forEach>
           </div>
         </div>

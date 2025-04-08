@@ -1,13 +1,13 @@
 package br.com.vinheiriaAgnello.classes;
 
-public class Products {
+public class Product {
 
 	private String title;
     private String image;
     private String tag;
     private String price;
 
-    public Products(String title, String image, String tag, String price) {
+    public Product(String title, String image, String tag, String price) {
         this.title = title;
         this.image = image;
         this.tag =tag;
