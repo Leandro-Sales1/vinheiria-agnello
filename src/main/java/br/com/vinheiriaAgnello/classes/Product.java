@@ -6,12 +6,15 @@ public class Product {
     private String image;
     private String tag;
     private String price;
+    private String id;
+    
 
-    public Product(String title, String image, String tag, String price) {
+    public Product(String title, String image, String tag, String price, String id) {
         this.title = title;
         this.image = image;
         this.tag =tag;
         this.price = price;
+        this.id = id;
     }
 
     public String gettitle() {
@@ -36,5 +39,13 @@ public class Product {
 
 	public void setPrice(String price) {
 		this.price = price;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }

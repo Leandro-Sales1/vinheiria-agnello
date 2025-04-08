@@ -6,10 +6,14 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.vinheiriaAgnello.classes.Product;
-import br.com.vinheiriaAgnello.classes.Products;
 
 /**
  * Servlet implementation class productsServlet
@@ -20,10 +24,10 @@ public class productsServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Product [] products = {
-        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00"),
-        		new Product("Casillero del Diablo", "./assets/images/casillero.jpg", "Chileno", "40,00"),
-        		new Product("Pata Negra", "./assets/images/pata-negra.png", "Espanhol", "45,00"),
-        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00")
+        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "1"),
+        		new Product("Casillero del Diablo", "./assets/images/casillero.jpg", "Chileno", "40,00",  "2"),
+        		new Product("Pata Negra", "./assets/images/pata-negra.png", "Espanhol", "45,00", "3"),
+        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "4")
         };
 
         
@@ -34,6 +38,7 @@ public class productsServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -41,12 +46,43 @@ public class productsServlet extends HttpServlet {
 	    String image = request.getParameter("image");
 	    String tag = request.getParameter("tag");
 	    String price = request.getParameter("price");
+	    String id = request.getParameter("id");
 	    
-		Product productSelected = new Product(title, image, tag, price);
-		
-		request.setAttribute("productSelected", productSelected);
-		
-		request.getRequestDispatcher("/cart.jsp").forward(request, response);
+	    
+        Product selectedProduct = new Product(title, image, tag, price, id);
+        
+        // Obtendo a sessão do usuário
+        HttpSession session = request.getSession();
+        
+        // Recuperando o carrinho da sessão (caso ele já exista)
+        List<Product> cart = (List<Product>) session.getAttribute("cart");
+        
+        // Se o carrinho não existir, cria uma nova lista
+        if (cart == null) {
+            cart = new ArrayList<>();
+        }
+        
+        // Adiciona o produto à lista (carrinho)
+        cart.add(selectedProduct);
+        
+        // Armazena a lista atualizada na sessão
+        session.setAttribute("cart", cart);	
+        
+        
+        request.setAttribute("productAdded", true);
+        
+        // retornando todos os produtos
+        
+        Product [] products = {
+        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "1"),
+        		new Product("Casillero del Diablo", "./assets/images/casillero.jpg", "Chileno", "40,00",  "2"),
+        		new Product("Pata Negra", "./assets/images/pata-negra.png", "Espanhol", "45,00", "3"),
+        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "4")
+        };
+        
+        request.setAttribute("products", products);        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/products.jsp");
+        dispatcher.forward(request, response);
 	}
 	
 }

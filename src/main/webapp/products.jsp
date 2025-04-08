@@ -11,6 +11,12 @@
       <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="index.css">
       <title>Produtos</title>
+      
+      <script type="text/javascript">
+        <c:if test="${productAdded}">
+            alert("Produto adicionado ao carrinho com sucesso!");
+        </c:if>
+    </script>
     </head>
 
     <body>
@@ -36,6 +42,7 @@
         		  <input type="hidden" name="image" value="${product.image}" />
         		  <input type="hidden" name="tag" value="${product.tag}" />
                   <input type="hidden" name="price" value="${product.price}" />
+                  <input type="hidden" name="id" value="${product.id}" />
                   <button type="submit">Add to Cart</button>
                 </div>
               </form>
@@ -55,6 +62,7 @@
         		  <input type="hidden" name="image" value="${product.image}" />
         		  <input type="hidden" name="tag" value="${product.tag}" />
                   <input type="hidden" name="price" value="${product.price}" />
+                  <input type="hidden" name="id" value="${product.id}" />
                   <button type="submit">Add to Cart</button>
                 </div>
               </form>
@@ -74,23 +82,18 @@
         		  <input type="hidden" name="image" value="${product.image}" />
         		  <input type="hidden" name="tag" value="${product.tag}" />
                   <input type="hidden" name="price" value="${product.price}" />
+                  <input type="hidden" name="id" value="${product.id}" />
                   <button type="submit">Add to Cart</button>
                 </div>
               </form>
             </c:forEach>
           </div>
         </div>
-
-
       </main>
       <footer>
         <jsp:include page="components/footer/footer.jsp"></jsp:include>
       </footer>
-
-
-
-
-
+      
       <script src="./resources/js/bootstrap.bundle.min.js"></script>
     </body>
 

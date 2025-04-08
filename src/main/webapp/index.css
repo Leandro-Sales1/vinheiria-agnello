@@ -6,6 +6,8 @@
 @import url('components/categories/categories.css');
 @import url('components/footer/footer.css');
 @import url('productsPage.css');
+@import url('cart.css');
+@import url('final-cart.css');
 
 :root{
   --bg-primary: #FFF3E3;

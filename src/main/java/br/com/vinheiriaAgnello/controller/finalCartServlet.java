@@ -6,33 +6,51 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.vinheiriaAgnello.classes.ProductAndQuantity;
-import br.com.vinheiriaAgnello.classes.Product;
 
 /**
  * Servlet implementation class middleCartServlet
  */
 @WebServlet("/finalCart")
 public class finalCartServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
+    private static final long serialVersionUID = 1L;
+    
+    @SuppressWarnings("unchecked")
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	    String title = request.getParameter("title");
-	    String image = request.getParameter("image");
-	    String tag = request.getParameter("tag");
-	    String price = request.getParameter("price");
-	    String quantity = request.getParameter("quantity");
-	    
-	    
-	    Product product = new Product(title, image, tag, price);
-	    ProductAndQuantity productAndQuantitySelected = new ProductAndQuantity(product, quantity);
-		
-		request.setAttribute("productSelected", productAndQuantitySelected);
-		
-		request.getRequestDispatcher("/final-cart.jsp").forward(request, response);
-	}
-	
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Tente obter os produtos do carrinho de uma sessão ou de um atributo anterior
+        List<ProductAndQuantity> products = (List<ProductAndQuantity>) request.getSession().getAttribute("cart");
+
+        // Verifique se os produtos estão disponíveis na sessão
+        if (products == null) {
+            products = new ArrayList<>();  // Caso contrário, crie uma lista vazia
+        }
+        
+        // Passa os produtos para o JSP
+        request.setAttribute("products", products);
+        
+        // Redireciona para o final-cart.jsp
+        request.getRequestDispatcher("/final-cart.jsp").forward(request, response);
+    }
+
+    @SuppressWarnings("unchecked")
+	@Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Tente obter os produtos do carrinho de uma sessão ou de um atributo anterior
+        List<ProductAndQuantity> products = (List<ProductAndQuantity>) request.getSession().getAttribute("cart");
+
+        // Verifique se os produtos estão disponíveis na sessão
+        if (products == null) {
+            products = new ArrayList<>();  // Caso contrário, crie uma lista vazia
+        }
+        
+        // Passa os produtos para o JSP
+        request.setAttribute("products", products);
+        
+        // Redireciona para o final-cart.jsp
+        request.getRequestDispatcher("/final-cart.jsp").forward(request, response);
+    }
 }
