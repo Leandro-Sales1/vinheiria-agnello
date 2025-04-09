@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.vinheiriaAgnello.classes.ProductAndQuantity;
+import br.com.vinheiriaAgnello.classes.Product;
 
 /**
  * Servlet implementation class middleCartServlet
@@ -22,7 +22,7 @@ public class finalCartServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Tente obter os produtos do carrinho de uma sessão ou de um atributo anterior
-        List<ProductAndQuantity> products = (List<ProductAndQuantity>) request.getSession().getAttribute("cart");
+        List<Product> products = (List<Product>) request.getSession().getAttribute("cart");
 
         // Verifique se os produtos estão disponíveis na sessão
         if (products == null) {
@@ -40,7 +40,7 @@ public class finalCartServlet extends HttpServlet {
 	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Tente obter os produtos do carrinho de uma sessão ou de um atributo anterior
-        List<ProductAndQuantity> products = (List<ProductAndQuantity>) request.getSession().getAttribute("cart");
+        List<Product> products = (List<Product>) request.getSession().getAttribute("cart");
 
         // Verifique se os produtos estão disponíveis na sessão
         if (products == null) {

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.vinheiriaAgnello.classes.Product;
-import br.com.vinheiriaAgnello.classes.ProductAndQuantity;
 
 /**
  * Servlet implementation class cartServlet
@@ -56,13 +55,10 @@ public class cartServlet extends HttpServlet {
         String quantity = request.getParameter("quantity");
 
         // Criar o objeto Product
-        Product productItem = new Product(title, image, tag, price, productId);
-
-        // Criar o objeto ProductAndQuantity
-        ProductAndQuantity productAndQuantity = new ProductAndQuantity(productItem, quantity);
+        Product productItem = new Product(title, image, tag, price, productId, quantity);
         
         // Recuperar o carrinho da sessão
-        List<ProductAndQuantity> cart = (List<ProductAndQuantity>) request.getSession().getAttribute("cart");
+        List<Product> cart = (List<Product>) request.getSession().getAttribute("cart");
 
         // Se o carrinho não existir, cria uma nova lista
         if (cart == null) {
@@ -70,7 +66,7 @@ public class cartServlet extends HttpServlet {
         }
 
         // Adicionar o produto ao carrinho
-        cart.add(productAndQuantity);
+        cart.add(productItem);
 
         // Armazenar o carrinho na sessão
         request.getSession().setAttribute("cart", cart);

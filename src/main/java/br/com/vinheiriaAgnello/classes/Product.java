@@ -6,15 +6,17 @@ public class Product {
     private String image;
     private String tag;
     private String price;
-    private String id;
+    private String id;    
+    private String quantity;    
     
 
-    public Product(String title, String image, String tag, String price, String id) {
+    public Product(String title, String image, String tag, String price, String id, String quantity) {
         this.title = title;
         this.image = image;
         this.tag =tag;
         this.price = price;
         this.id = id;
+        this.quantity = quantity;
     }
 
     public String gettitle() {
@@ -47,5 +49,13 @@ public class Product {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
 	}
 }

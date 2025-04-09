@@ -24,10 +24,10 @@ public class productsServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Product [] products = {
-        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "1"),
-        		new Product("Casillero del Diablo", "./assets/images/casillero.jpg", "Chileno", "40,00",  "2"),
-        		new Product("Pata Negra", "./assets/images/pata-negra.png", "Espanhol", "45,00", "3"),
-        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "4")
+        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "1", "0"),
+        		new Product("Casillero del Diablo", "./assets/images/casillero.jpg", "Chileno", "40,00",  "2", "0"),
+        		new Product("Pata Negra", "./assets/images/pata-negra.png", "Espanhol", "45,00", "3", "0"),
+        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "4", "0")
         };
 
         
@@ -47,9 +47,10 @@ public class productsServlet extends HttpServlet {
 	    String tag = request.getParameter("tag");
 	    String price = request.getParameter("price");
 	    String id = request.getParameter("id");
+	    String quantity = "1";
 	    
 	    
-        Product selectedProduct = new Product(title, image, tag, price, id);
+        Product selectedProduct = new Product(title, image, tag, price, id, quantity);
         
         // Obtendo a sessão do usuário
         HttpSession session = request.getSession();
@@ -74,10 +75,10 @@ public class productsServlet extends HttpServlet {
         // retornando todos os produtos
         
         Product [] products = {
-        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "1"),
-        		new Product("Casillero del Diablo", "./assets/images/casillero.jpg", "Chileno", "40,00",  "2"),
-        		new Product("Pata Negra", "./assets/images/pata-negra.png", "Espanhol", "45,00", "3"),
-        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "4")
+        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "1", "0"),
+        		new Product("Casillero del Diablo", "./assets/images/casillero.jpg", "Chileno", "40,00",  "2", "0"),
+        		new Product("Pata Negra", "./assets/images/pata-negra.png", "Espanhol", "45,00", "3", "0"),
+        		new Product("Concha Y Toro Reservado", "./assets/images/concha.webp", "Chileno", "25,00", "4", "0")
         };
         
         request.setAttribute("products", products);        

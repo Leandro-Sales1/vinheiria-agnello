@@ -73,3 +73,20 @@
     color: #898989;
   }
 }
+
+.submitbutton{
+  padding: 0.5rem;
+  position: relative;
+  bottom: 4rem;
+  left: 12rem;
+  border: 1px solid #653510;
+  border-radius: 16px;
+  background-color: var(--bg-primary);
+  
+}
+
+.submitbutton:hover{
+  background-color: #653510;
+  color: white;
+  border: 1px solid var(--bg-primary);
+}

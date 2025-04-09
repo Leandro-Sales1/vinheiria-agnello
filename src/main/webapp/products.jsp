@@ -43,7 +43,7 @@
         		  <input type="hidden" name="tag" value="${product.tag}" />
                   <input type="hidden" name="price" value="${product.price}" />
                   <input type="hidden" name="id" value="${product.id}" />
-                  <button type="submit">Add to Cart</button>
+                  <button class="submitbutton" type="submit">Add to Cart</button>
                 </div>
               </form>
             </c:forEach>
@@ -63,7 +63,7 @@
         		  <input type="hidden" name="tag" value="${product.tag}" />
                   <input type="hidden" name="price" value="${product.price}" />
                   <input type="hidden" name="id" value="${product.id}" />
-                  <button type="submit">Add to Cart</button>
+                  <button class="submitbutton" type="submit">Add to Cart</button>
                 </div>
               </form>
             </c:forEach>
@@ -83,7 +83,7 @@
         		  <input type="hidden" name="tag" value="${product.tag}" />
                   <input type="hidden" name="price" value="${product.price}" />
                   <input type="hidden" name="id" value="${product.id}" />
-                  <button type="submit">Add to Cart</button>
+                  <button class="submitbutton" type="submit">Add to Cart</button>
                 </div>
               </form>
             </c:forEach>
